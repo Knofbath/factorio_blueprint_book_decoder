@@ -78,17 +78,10 @@ if __name__ == "__main__":
 
     # ==== Writing ====
 
-    # Writing the json file:
-    with open(f'{opt.output}book.json', 'w') as f:
-        json.dump(bp_json, f)
-        verbose(f'Saved book.json at {opt.output}')
-
-    # Save each blueprint:
+    # Save blueprint:
     os.mkdir(f'{opt.output}blueprints')
     blueprint_file_name = "output"
-    with open(f'{opt.output}blueprints/{blueprint_file_name}.json', 'w') as f:
-            json.dump(bp_json, f)
     with open(f'{opt.output}blueprints/{blueprint_file_name}.txt', 'w') as f:
             f.write(encode(bp_json))
 
-    verbose(f"Saved blueprints at {opt.output}blueprints")
+    verbose(f"Saved blueprint at {opt.output}blueprints")
